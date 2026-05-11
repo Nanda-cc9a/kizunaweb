@@ -99,11 +99,57 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ==========================================
-  // LANGUAGE SWITCHER LOGIC
+  // CONTACT FORM AJAX
   // ==========================================
-  
-  // (Static links in HTML handle navigation now)
-  // We can add logic here to highlight the active language if needed,
-  // but usually it's handled by adding the 'active' class in the HTML of each page.
+  var contactForm = document.getElementById("contactForm");
+  var responseDiv = document.getElementById("contactResponse");
+  var submitBtn = document.getElementById("submitBtn");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Show loading state
+      submitBtn.disabled = true;
+      var originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sedang mengirim...';
+      
+      responseDiv.style.display = "none";
+      responseDiv.className = "";
+
+      var formData = new FormData(contactForm);
+
+      fetch(contactForm.getAttribute("action"), {
+        method: "POST",
+        body: formData,
+      })
+      .then(function(response) {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error("Terjadi kesalahan.");
+        }
+      })
+      .then(function(text) {
+        responseDiv.style.display = "block";
+        responseDiv.style.background = "#d4edda";
+        responseDiv.style.color = "#155724";
+        responseDiv.style.border = "1px solid #c3e6cb";
+        responseDiv.innerText = text;
+        contactForm.reset();
+      })
+      .catch(function(error) {
+        responseDiv.style.display = "block";
+        responseDiv.style.background = "#f8d7da";
+        responseDiv.style.color = "#721c24";
+        responseDiv.style.border = "1px solid #f5c6cb";
+        responseDiv.innerText = "Maaf, terjadi kesalahan. Silakan coba lagi.";
+      })
+      .finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
+    });
+  }
 });
 

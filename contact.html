@@ -334,28 +334,49 @@
                 Isi formulir di bawah dan tim kami akan membalas dalam 1×24 jam
                 kerja.
               </p>
-              <form>
+              <form id="contactForm" novalidate="novalidate">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="kz-form-group">
                       <label>Nama Lengkap *</label
-                      ><input type="text" placeholder="Nama Anda" />
+                      ><input
+                        type="text"
+                        id="name"
+                        placeholder="Nama Anda"
+                        required
+                        data-validation-required-message="Tolong masukkan nama Anda."
+                      />
+                      <p class="help-block text-danger"></p>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="kz-form-group">
                       <label>Email *</label
-                      ><input type="email" placeholder="email@anda.com" />
+                      ><input
+                        type="email"
+                        id="email"
+                        placeholder="email@anda.com"
+                        required
+                        data-validation-required-message="Tolong masukkan alamat email Anda."
+                      />
+                      <p class="help-block text-danger"></p>
                     </div>
                   </div>
                 </div>
                 <div class="kz-form-group">
-                  <label>Nomor WhatsApp</label
-                  ><input type="tel" placeholder="+62 ..." />
+                  <label>Nomor WhatsApp *</label
+                  ><input
+                    type="tel"
+                    id="whatsapp"
+                    placeholder="+62 ..."
+                    required
+                    data-validation-required-message="Tolong masukkan nomor WhatsApp Anda."
+                  />
+                  <p class="help-block text-danger"></p>
                 </div>
                 <div class="kz-form-group">
                   <label>Program yang Diminati</label
-                  ><select>
+                  ><select id="program">
                     <option value="">Pilih Program</option>
                     <option>Magang Jepang (TITP)</option>
                     <option>Special Skill Worker (SSW)</option>
@@ -366,11 +387,17 @@
                 <div class="kz-form-group">
                   <label>Pesan *</label
                   ><textarea
+                    id="message"
                     placeholder="Tulis pertanyaan atau pesan Anda..."
+                    required
+                    data-validation-required-message="Tolong masukkan pesan Anda."
                   ></textarea>
+                  <p class="help-block text-danger"></p>
                 </div>
+                <div id="success"></div>
                 <button
                   type="submit"
+                  id="sendMessageButton"
                   class="kz-btn-primary"
                   style="
                     width: 100%;
@@ -539,6 +566,8 @@
     ></a>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqBootstrapValidation/1.3.7/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
     <script src="js/kizuna-main.js"></script>
   </body>
 </html>
