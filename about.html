@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tentang Kami | LPK KIZUNA Mitra Indonesia</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="LPK KIZUNA Mitra Indonesia — Magang Jepang, SSW, dan Kursus Bahasa Jepang terpercaya di Semarang."
+    />
+    <link rel="icon" href="img/iconkizuna.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/kizuna-theme.css" rel="stylesheet" />
+
+    <style>
+      .about-img {
+        border-radius: 14px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .vm-tab {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .vm-btn {
+        padding: 10px 22px;
+        border-radius: 7px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+      }
+
+      .vm-btn.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      .vm-btn:not(.active) {
+        background: var(--light);
+        color: var(--text-muted);
+      }
+
+      .vm-panel {
+        display: none;
+      }
+
+      .vm-panel.active {
+        display: block;
+      }
+
+      .timeline {
+        padding-left: 32px;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(212, 168, 67, 0.3);
+      }
+
+      .tl-item {
+        position: relative;
+        margin-bottom: 28px;
+      }
+
+      .tl-dot {
+        position: absolute;
+        left: -28px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 3px solid var(--white);
+        box-shadow: 0 0 0 3px var(--gold);
+      }
+
+      .tl-year {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .tl-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--navy);
+        margin: 3px 0;
+      }
+
+      .tl-desc {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      .stat-box {
+        background: var(--navy);
+        border-radius: 12px;
+        padding: 26px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+      }
+
+      .stat-box .lbl {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="kz-topbar d-none d-lg-block">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>
+            <span class="kz-tb-item"
+              ><i class="fas fa-clock"></i>Senin–Jumat, 08:00–17:00 WIB</span
+            >
+            <span class="kz-tb-item"
+              ><i class="fas fa-phone"></i>+62 821-3719-7953</span
+            >
+            <span class="kz-tb-item"
+              ><i class="fas fa-envelope"></i
+              >kizunamitraindonesia@gmail.com</span
+            >
+          </div>
+          <div>
+            <span class="kz-legal-pill"
+              ><i class="fas fa-shield-alt"></i>Izin Kemnaker Resmi</span
+            >
+            <span class="kz-legal-pill"
+              ><i class="fas fa-check-circle"></i>Akreditasi LA LPK 2020</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="kz-navbar">
+      <div class="kz-navbar-inner container-fluid px-4">
+        <a href="index" class="kz-brand">
+          <img src="img/iconkizuna.webp" alt="Kizuna" />
+          <span class="kz-brand-name">KIZUNA<em> Mitra Indonesia</em></span>
+        </a>
+        <button class="kz-toggler" id="kzToggler">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="kzNavMenu">
+          <ul class="kz-nav">
+            <li><a href="index">Beranda</a></li>
+            <li><a href="about" class="active">Tentang Kami</a></li>
+            <li><a href="team">Tim Kami</a></li>
+            <li><a href="blog">Galeri</a></li>
+            <li>
+              <a href="#">Program ▾</a>
+              <ul class="kz-dropdown-menu">
+                <li><a href="magang">Magang Jepang</a></li>
+                <li><a href="ssw">Special Skill Worker (SSW)</a></li>
+                <li><a href="belajar">Kursus Bahasa Jepang</a></li>
+                <li><a href="kunjungan">Kunjungan &amp; Wawancara</a></li>
+                <li><a href="kerjamagang">Kerja &amp; Magang</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="kz-lang-label"
+                ><i class="fas fa-globe"></i> ID ▾</a
+              >
+              <ul class="kz-dropdown-menu" style="min-width: 140px">
+                <li>
+                  <a href="about" class="kz-lang-selector active"
+                    >🇮🇩 Indonesia</a
+                  >
+                </li>
+                <li>
+                  <a href="about-japan" class="kz-lang-selector"
+                    >🇯🇵 日本語</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="contact" class="kz-nav-cta">Daftar Sekarang</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="kz-page-hero">
+      <div class="container">
+        <div class="eyebrow">LPK Kizuna Mitra Indonesia</div>
+        <h1>Tentang Kami</h1>
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+          "
+        >
+          Kenali lebih dekat LPK Kizuna Mitra Indonesia — lembaga resmi yang
+          telah mencetak ratusan alumni sukses ke Jepang sejak 2018.
+        </p>
+        <div class="kz-breadcrumb">
+          <a href="index">Beranda</a><span class="sep">›</span
+          ><span>Tentang Kami</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUR STORY -->
+    <section style="padding: 72px 0">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 fade-up">
+            <div
+              style="
+                position: relative;
+                padding-bottom: 24px;
+                padding-right: 20px;
+              "
+            >
+              <img src="img/wlkmkizuna.jpg" alt="Kizuna" class="about-img" />
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: 10px;
+                  background: var(--primary);
+                  color: white;
+                  border-radius: 10px;
+                  padding: 18px 22px;
+                  text-align: center;
+                  box-shadow: 0 6px 22px rgba(200, 16, 46, 0.3);
+                "
+              >
+                <div style="font-size: 36px; font-weight: 800; line-height: 1">
+                  7+
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 600;
+                    opacity: 0.9;
+                    margin-top: 4px;
+                  "
+                >
+                  Tahun<br />Pengalaman
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">Our Story</div>
+              <h2>LPK Resmi &amp; Terpercaya<br />di Semarang Sejak 2018</h2>
+              <p>
+                LPK Kizuna Mitra Indonesia adalah LPK resmi dan terpercaya di
+                Semarang yang telah berpengalaman sejak 2018 dalam program
+                pelatihan dan penyaluran kerja ke Jepang. Berfokus pada
+                pendidikan bahasa Jepang, pembentukan attitude kerja, dan
+                persiapan skill profesional, Kizuna Mitra Indonesia membantu
+                peserta mempersiapkan diri untuk program magang dan kerja Jepang
+                secara aman, legal, dan terarah. Didukung sistem pelatihan
+                intensif serta pendampingan profesional, Kizuna Mitra Indonesia
+                menjadi pilihan banyak calon peserta yang ingin meraih karier
+                internasional, pengalaman kerja global, dan masa depan yang
+                lebih baik di Jepang .
+              </p>
+            </div>
+            <div class="kz-legal-card">
+              <i class="fas fa-id-card"></i>
+              <div>
+                <div class="title">Izin Operasional Kemnaker RI</div>
+                <div class="num">
+                  No. <strong>KEP.10/LATTAS/VI/2018</strong> — Ditjen Binapenta
+                  &amp; PKK
+                </div>
+              </div>
+            </div>
+            <div class="kz-legal-card">
+              <i class="fas fa-medal"></i>
+              <div>
+                <div class="title">
+                  Akreditasi LA LPK — Disnaker Jawa Tengah
+                </div>
+                <div class="num">
+                  No. <strong>013/LA-LPK/Akr/XI/2020</strong> — Terakreditasi
+                  sejak 2020
+                </div>
+              </div>
+            </div>
+            <div class="kz-legal-card">
+              <i class="fas fa-globe-asia"></i>
+              <div>
+                <div class="title">
+                  Sending Organization (SO) Resmi No.2/1812/HK.03.01/VII/2024
+                </div>
+                <div class="num">
+                  Terdaftar di <strong>JITCO</strong> dan bermitra dengan
+                  <strong>Beberapa Perusahaan Jepang</strong> — Pengiriman
+                  peserta magang resmi ke Jepang
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 d-flex flex-wrap" style="gap: 12px">
+              <a href="contact" class="kz-btn-primary"
+                ><i class="fas fa-paper-plane"></i>Daftar Sekarang</a
+              >
+              <a
+                href="https://wa.me/6282137197953"
+                target="_blank"
+                class="kz-btn-wa"
+                ><i class="fab fa-whatsapp"></i>WhatsApp Kami</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG KIZUNA - PARAGRAF & FOTO -->
+    <section style="padding: 80px 0; background: #fff">
+      <div class="container">
+        <!-- Baris 1: Teks kiri, foto kanan -->
+        <div class="row align-items-center g-5 mb-5 fade-up">
+          <div class="col-lg-6">
+            <div class="eyebrow">Siapa Kami</div>
+            <h2
+              style="
+                font-size: clamp(22px, 3.5vw, 34px);
+                color: var(--navy);
+                margin-bottom: 20px;
+              "
+            >
+              LPK Kizuna — Jembatan Karier<br />Menuju Jepang Sejak 2018
+            </h2>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+                margin-bottom: 18px;
+              "
+            >
+              <strong style="color: var(--navy)"
+                >LPK Kizuna Mitra Indonesia</strong
+              >
+              adalah Lembaga Pelatihan Kerja resmi yang berdiri sejak April 2018
+              di Semarang, Jawa Tengah. Didirikan oleh para alumni ex-magang
+              Jepang yang ingin memberikan dampak nyata bagi generasi muda
+              Indonesia, Kizuna hadir sebagai mitra terpercaya yang mendampingi
+              perjalanan karier Anda dari nol hingga sukses bekerja di Jepang.
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+                margin-bottom: 24px;
+              "
+            >
+              Berizin resmi dari Kemnaker RI dan terakreditasi oleh LA LPK
+              Disnaker Jawa Tengah, kami telah memberangkatkan lebih dari
+              <strong style="color: var(--primary)">300+ alumni</strong> ke
+              berbagai prefektur di Jepang. Dengan metode pelatihan yang
+              terstruktur, pengajar berpengalaman, dan jaringan lebih dari
+              <strong style="color: var(--primary)"
+                >20+ mitra perusahaan Jepang</strong
+              >, Kizuna siap membawa Anda ke tahap berikutnya.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <div
+                style="
+                  background: var(--light);
+                  border-radius: 10px;
+                  padding: 14px 20px;
+                  text-align: center;
+                  min-width: 110px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--primary);
+                  "
+                >
+                  300+
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                  "
+                >
+                  Alumni
+                </div>
+              </div>
+              <div
+                style="
+                  background: var(--light);
+                  border-radius: 10px;
+                  padding: 14px 20px;
+                  text-align: center;
+                  min-width: 110px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--primary);
+                  "
+                >
+                  7+
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                  "
+                >
+                  Tahun Berpengalaman
+                </div>
+              </div>
+              <div
+                style="
+                  background: var(--light);
+                  border-radius: 10px;
+                  padding: 14px 20px;
+                  text-align: center;
+                  min-width: 110px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--primary);
+                  "
+                >
+                  4.9★
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                  "
+                >
+                  Google Rating
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              style="
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.14);
+              "
+            >
+              <img
+                src="img/galerykiz.jpg"
+                alt="Suasana LPK Kizuna"
+                style="
+                  width: 100%;
+                  height: 400px;
+                  object-fit: cover;
+                  display: block;
+                "
+              />
+              <div
+                style="
+                  position: absolute;
+                  bottom: 20px;
+                  left: 20px;
+                  background: rgba(255, 255, 255, 0.95);
+                  border-radius: 12px;
+                  padding: 12px 18px;
+                  backdrop-filter: blur(8px);
+                "
+              >
+                <div
+                  style="font-size: 13px; font-weight: 700; color: var(--navy)"
+                >
+                  📍 Ngaliyan, Semarang
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted)">
+                  Kantor & Pusat Pelatihan
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baris 2: Foto kiri, teks kanan -->
+        <div
+          class="row align-items-center g-5 fade-up"
+          style="flex-direction: row-reverse"
+        >
+          <div class="col-lg-6">
+            <div class="eyebrow">Lingkungan Belajar</div>
+            <h2
+              style="
+                font-size: clamp(20px, 3vw, 30px);
+                color: var(--navy);
+                margin-bottom: 20px;
+              "
+            >
+              Belajar Bareng, Tumbuh Bersama
+            </h2>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+                margin-bottom: 18px;
+              "
+            >
+              Di Kizuna, belajar bukan sekadar menghafal huruf hiragana dan
+              katakana. Kami menciptakan lingkungan yang hangat dan penuh
+              semangat di mana setiap peserta saling mendukung satu sama lain.
+              Tidak jarang, relawan atau pelajar asal Jepang ikut hadir untuk
+              berbagi pengalaman langsung.
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+              "
+            >
+              Metode pembelajaran kami mencakup latihan percakapan sehari-hari,
+              simulasi wawancara kerja (<em>mensetsu</em>), pelatihan fisik,
+              hingga pemahaman budaya kerja Jepang yang sesungguhnya — sehingga
+              peserta siap mental dan profesional saat tiba di Jepang.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px"
+            >
+              <div
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                  grid-row: span 2;
+                "
+              >
+                <img
+                  src="img/kedekatan.jpg"
+                  alt="Keakraban peserta Kizuna"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    min-height: 280px;
+                  "
+                />
+              </div>
+              <div
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="img/belajarbersama.webp"
+                  alt="Belajar bersama di Kizuna"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    display: block;
+                  "
+                />
+              </div>
+              <div
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="img/mensetsu.jpg"
+                  alt="Latihan mensetsu di Kizuna"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    display: block;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section style="padding: 64px 0; background: #fff">
+      <div class="container">
+        <div
+          class="section-header text-center fade-up"
+          style="margin: 0 auto 48px; max-width: 600px"
+        >
+          <div class="eyebrow" style="justify-content: center">
+            Mengapa Memilih Kami
+          </div>
+          <h2 style="font-size: clamp(24px, 4vw, 36px)">
+            Keunggulan LPK KIZUNA
+          </h2>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 15px;
+              line-height: 1.7;
+              margin: 0 auto;
+            "
+          >
+            Kami hadir bukan sekadar lembaga kursus, melainkan mitra perjalanan
+            karier Anda ke Jepang dari awal hingga sukses.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-certificate"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                Legalitas Resmi
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                Berizin Kemnaker RI & terakreditasi LA LPK Disnaker Jawa Tengah.
+                Terdaftar resmi di JITCO & bermitra dengan perusahaan Jepang.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-chalkboard-teacher"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                Pengajar Berpengalaman
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                Sensei kami adalah alumni ex-magang Jepang yang memahami
+                kebutuhan nyata di lapangan, bukan sekadar teori.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-hand-holding-usd"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                Transparan & No Hidden Fee
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                Semua biaya diinformasikan secara jelas di awal. Tidak ada biaya
+                tersembunyi. Proses pendaftaran terbuka dan jujur.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-users"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                Pendampingan Penuh
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                Dari pendaftaran, pelatihan, wawancara user, pengurusan visa,
+                hingga keberangkatan — kami dampingi setiap langkah.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISI MISI -->
+    <section style="padding: 72px 0; background: var(--light)">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">Tujuan Kami</div>
+              <h2>Visi &amp; Misi KIZUNA</h2>
+            </div>
+            <div class="vm-tab">
+              <button class="vm-btn active" onclick="switchVm(this, 'visi')">
+                Visi
+              </button>
+              <button class="vm-btn" onclick="switchVm(this, 'misi')">
+                Misi
+              </button>
+            </div>
+            <div class="vm-panel active" id="vm-visi">
+              <p
+                style="
+                  font-size: 15px;
+                  line-height: 1.8;
+                  color: var(--text-muted);
+                "
+              >
+                Menjadi Lembaga Pelatihan Kerja yang
+                <strong>Unggul, Profesional, dan Terpercaya</strong> dalam
+                mencetak Sumber Daya Manusia yang mampu bersaing di tingkat
+                internasional, khususnya bidang pemagangan ke Jepang.
+              </p>
+            </div>
+            <div class="vm-panel" id="vm-misi">
+              <ul style="padding-left: 0; list-style: none">
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >Menyediakan pelatihan bahasa, budaya, dan etika kerja Jepang
+                  yang inovatif dan berkualitas tinggi.
+                </li>
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >Membangun hubungan erat dengan peserta dan mitra, serta
+                  memberikan pelayanan yang profesional.
+                </li>
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >Menjadi pusat informasi dan konsultasi terpercaya seputar
+                  peluang magang di Jepang.
+                </li>
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >Menjalin kerjasama strategis dengan perusahaan Jepang untuk
+                  memperluas peluang peserta.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-7 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">Pendaftaran</div>
+              <h2>Cara Mendaftar KIZUNA</h2>
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">Pendaftaran dan Seleksi Awal</div>
+                <div class="tl-desc">
+                  Calon peserta mendaftar melalui LPK Kizuna, melakukan Medical
+                  Check Up (MCU) dan mengikuti wawancara pendaftaran.
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">Pelatihan Bahasa & Budaya</div>
+                <div class="tl-desc">
+                  Peserta mengikuti pelatihan di LPK Kizuna Mitra Indonesia
+                  untuk menguasai bahasa Jepang, budaya, serta attitude kerja.
+                  Bimbingan khusus untuk persiapan beberapa ujian agar sesuai
+                  standar kebutuhan perusahaan Jepang. Pembekalan akhir tentang
+                  kehidupan dan pekerjaan di Jepang.
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">
+                  Matching dan Interview (Wawancara User)
+                </div>
+                <div class="tl-desc">
+                  Peserta akan diperkenalkan kepada perusahaan-perusahaan Jepang
+                  melalui proses seleksi terstruktur yang mencakup wawancara
+                  langsung maupun tidak langsung.
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">Proses Visa dan Dokumen</div>
+                <div class="tl-desc">
+                  Setelah lolos seleksi, tim KIZUNA akan mendampingi peserta
+                  dalam pengurusan dokumen yang diperlukan dan proses visa.
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">
+                  Pembekalan Intensif Pra-Keberangkatan
+                </div>
+                <div class="tl-desc">
+                  Sebelum keberangkatan, peserta menerima orientasi akhir
+                  mengenai budaya kerja, Bahasa Jepang tingkat lanjut, dan
+                  difasilitasi keberangkatannya ke Jepang oleh Kizuna Mitra
+                  Indonesia.
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2018–Kini</div>
+                <div class="tl-title">300+ Alumni &amp; Terus Berkembang</div>
+                <div class="tl-desc">
+                  Lebih dari 300 alumni sukses di Jepang, bermitra dengan
+                  UDINUS, UNNES, dan 20+ perusahaan Jepang.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="padding: 60px 0; background: var(--navy)">
+      <div class="container">
+        <div class="row kz-stats-row" style="--bs-gutter-x: 20px">
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="300+">300+</div>
+              <div class="lbl">Alumni Diberangkatkan</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="95%">95%</div>
+              <div class="lbl">Tingkat Kelulusan Ujian</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="20+">20+</div>
+              <div class="lbl">Mitra Perusahaan Jepang</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="7+">7+</div>
+              <div class="lbl">Tahun Pengalaman</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="kz-cta-bar">
+      <div class="container" style="position: relative; z-index: 2">
+        <h2>Siap Memulai Perjalanan ke Jepang?</h2>
+        <p>
+          Konsultasi gratis bersama tim kami. Kami bantu Anda temukan program
+          yang paling sesuai.
+        </p>
+        <a
+          href="https://wa.me/6282137197953?text=Halo%20saya%20ingin%20konsultasi%20tentang%20LPK%20Kizuna"
+          target="_blank"
+          class="kz-btn-white"
+          ><i class="fab fa-whatsapp"></i>Konsultasi Gratis</a
+        >
+        <a href="contact" class="kz-btn-white-outline"
+          ><i class="fas fa-envelope"></i>Kirim Pesan</a
+        >
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            margin: 20px 0 0;
+          "
+        >
+          <i class="fas fa-shield-alt" style="margin-right: 5px"></i>LPK Resmi
+          Berizin Kemnaker · Transparan · No Hidden Fee
+        </p>
+      </div>
+    </div>
+    <footer class="kz-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="kz-footer-logo">
+              <img src="img/iconkizuna.webp" alt="Kizuna" />
+              <span>KIZUNA</span>
+            </div>
+            <p class="kz-footer-desc">
+              Lembaga Pelatihan Kerja resmi untuk program magang Jepang,
+              Persiapan SSW dan Internship.LPK Kizuna Mitra Indonesia adalah
+              Mitra terpercaya menuju karier internasional sejak 2018.
+            </p>
+            <div class="kz-footer-social">
+              <a
+                href="https://www.instagram.com/lpk_kizuna_mitra_indonesia/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.youtube.com/" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://wa.me/6282137197953" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+            <div class="kz-footer-legal-box mt-3">
+              <span
+                ><i
+                  class="fas fa-id-card"
+                  style="color: var(--gold); margin-right: 6px"
+                ></i
+                >Izin Kemnaker: KEP.10/LATTAS/VI/2018</span
+              >
+              <span
+                ><i
+                  class="fas fa-medal"
+                  style="color: var(--gold); margin-right: 6px"
+                ></i
+                >Akreditasi LA LPK: No. 013/LA-LPK/Akr/XI/2020</span
+              >
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-5">
+            <p class="kz-footer-heading">Program</p>
+            <div class="kz-footer-links">
+              <a href="magang">Magang Jepang</a>
+              <a href="ssw">SSW Jepang</a>
+              <a href="belajar">Kursus Bahasa</a>
+              <a href="kunjungan">Kunjungan</a>
+              <a href="kerjamagang">Kerja &amp; Magang</a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-5">
+            <p class="kz-footer-heading">Halaman</p>
+            <div class="kz-footer-links">
+              <a href="index">Beranda</a>
+              <a href="about">Tentang Kami</a>
+              <a href="team">Tim Kami</a>
+              <a href="blog">Galeri</a>
+              <a href="contact">Kontak</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5">
+            <p class="kz-footer-heading">Hubungi Kami</p>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i
+              ><span
+                >Jl. Beringin Rejo Barat No.54, Bringin, Kec. Ngaliyan, Kota
+                Semarang, Jawa Tengah 50189</span
+              >
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-phone"></i><span>+62 821-3719-7953</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-envelope"></i
+              ><span>kizunamitraindonesia@gmail.com</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-clock"></i
+              ><span>Senin – Jumat, 08:00 – 17:00 WIB</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-globe-asia"></i
+              ><span
+                >Kantor Jepang: 宮永 保文<br />茨城県守谷市みずき野2丁目9-9</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="kz-footer-bottom">
+          <p>© 2025 LPK Kizuna Mitra Indonesia. All Rights Reserved.</p>
+          <p>
+            Izin Kemnaker No. KEP.10/LATTAS/VI/2018 | Akreditasi LA LPK No.
+            013/LA-LPK/Akr/XI/2020
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/6282137197953?text=Halo%20saya%20ingin%20bertanya%20tentang%20LPK%20Kizuna"
+      target="_blank"
+      class="kz-wa-float"
+      title="Chat WhatsApp"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+    <a href="#" class="kz-back-top" id="kzBackTop"
+      ><i class="fas fa-chevron-up"></i
+    ></a>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/kizuna-main.js"></script>
+
+    <script>
+      function switchVm(btn, id) {
+        document
+          .querySelectorAll(".vm-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll(".vm-panel")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("vm-" + id).classList.add("active");
+      }
+    </script>
+  </body>
+</html>

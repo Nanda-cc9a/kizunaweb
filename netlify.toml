@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[processing]
+  [processing.html]
+    pretty_urls = true
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+  status = 200
+  force = false

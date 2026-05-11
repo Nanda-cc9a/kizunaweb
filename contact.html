@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hubungi Kami | LPK KIZUNA Mitra Indonesia</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="LPK KIZUNA Mitra Indonesia — Magang Jepang, SSW, dan Kursus Bahasa Jepang terpercaya di Semarang."
+    />
+    <link rel="icon" href="img/iconkizuna.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/kizuna-theme.css" rel="stylesheet" />
+
+    <style>
+      .kz-form-group {
+        margin-bottom: 18px;
+      }
+
+      .kz-form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+
+      .kz-form-group input,
+      .kz-form-group select,
+      .kz-form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--text);
+        background: var(--white);
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        outline: none;
+      }
+
+      .kz-form-group input:focus,
+      .kz-form-group select:focus,
+      .kz-form-group textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.1);
+      }
+
+      .kz-form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .contact-info-card {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 20px;
+        background: var(--light);
+        border-radius: 12px;
+        margin-bottom: 14px;
+      }
+
+      .contact-info-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--primary);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .contact-info-icon i {
+        color: white;
+        font-size: 18px;
+      }
+
+      .contact-info-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-muted);
+        margin-bottom: 4px;
+      }
+
+      .contact-info-val {
+        font-size: 14px;
+        color: var(--navy);
+        font-weight: 600;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="kz-topbar d-none d-lg-block">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>
+            <span class="kz-tb-item"
+              ><i class="fas fa-clock"></i>Senin–Jumat, 08:00–17:00 WIB</span
+            >
+            <span class="kz-tb-item"
+              ><i class="fas fa-phone"></i>+62 821-3719-7953</span
+            >
+            <span class="kz-tb-item"
+              ><i class="fas fa-envelope"></i
+              >kizunamitraindonesia@gmail.com</span
+            >
+          </div>
+          <div>
+            <span class="kz-legal-pill"
+              ><i class="fas fa-shield-alt"></i>Izin Kemnaker Resmi</span
+            >
+            <span class="kz-legal-pill"
+              ><i class="fas fa-check-circle"></i>Akreditasi LA LPK 2020</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="kz-navbar">
+      <div class="kz-navbar-inner container-fluid px-4">
+        <a href="index" class="kz-brand">
+          <img src="img/iconkizuna.webp" alt="Kizuna" />
+          <span class="kz-brand-name">KIZUNA<em> Mitra Indonesia</em></span>
+        </a>
+        <button class="kz-toggler" id="kzToggler">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="kzNavMenu">
+          <ul class="kz-nav">
+            <li><a href="index">Beranda</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="team">Tim Kami</a></li>
+            <li><a href="blog">Galeri</a></li>
+            <li>
+              <a href="#">Program ▾</a>
+              <ul class="kz-dropdown-menu">
+                <li><a href="magang">Magang Jepang</a></li>
+                <li><a href="ssw">Special Skill Worker (SSW)</a></li>
+                <li><a href="belajar">Kursus Bahasa Jepang</a></li>
+                <li><a href="kunjungan">Kunjungan &amp; Wawancara</a></li>
+                <li><a href="kerjamagang">Kerja &amp; Magang</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="kz-lang-label"
+                ><i class="fas fa-globe"></i> ID ▾</a
+              >
+              <ul class="kz-dropdown-menu" style="min-width: 140px">
+                <li>
+                  <a href="contact" class="kz-lang-selector active"
+                    >🇮🇩 Indonesia</a
+                  >
+                </li>
+                <li>
+                  <a href="contact-japan" class="kz-lang-selector"
+                    >🇯🇵 日本語</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="contact" class="kz-nav-cta">Daftar Sekarang</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="kz-page-hero">
+      <div class="container">
+        <div class="eyebrow">LPK Kizuna Mitra Indonesia</div>
+        <h1>Hubungi Kami</h1>
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+          "
+        >
+          Ada pertanyaan? Tim kami siap membantu Anda menemukan informasi yang
+          tepat tentang program KIZUNA.
+        </p>
+        <div class="kz-breadcrumb">
+          <a href="index">Beranda</a><span class="sep">›</span
+          ><span>Hubungi Kami</span>
+        </div>
+      </div>
+    </div>
+    <section style="padding: 72px 0">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">Info Kontak</div>
+              <h2>Kami Siap Membantu Anda</h2>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Alamat Kantor</div>
+                <div class="contact-info-val">
+                  Jl. Beringin Rejo Barat No.54, Bringin, Kec. Ngaliyan, Kota
+                  Semarang, Jawa Tengah 50189
+                </div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">WhatsApp / Telepon</div>
+                <div class="contact-info-val">
+                  <a
+                    href="https://wa.me/6282137197953"
+                    target="_blank"
+                    style="color: var(--primary); text-decoration: none"
+                    >+62 821-3719-7953</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-val">
+                  <a
+                    href="mailto:kizunamitraindonesia@gmail.com"
+                    style="color: var(--primary); text-decoration: none"
+                    >kizunamitraindonesia@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <div class="contact-info-label">Jam Operasional</div>
+                <div class="contact-info-val">
+                  Senin – Jumat: 08:00 – 16:30 WIB
+                </div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon"><i class="fas fa-qrcode"></i></div>
+              <div>
+                <div class="contact-info-label">Scan QR untuk Daftar</div>
+                <img
+                  src="img/qrcontact.webp"
+                  alt="QR Daftar"
+                  style="width: 100px; margin-top: 8px; border-radius: 8px"
+                />
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 24px;
+                padding: 16px;
+                background: rgba(212, 168, 67, 0.1);
+                border: 1px solid rgba(212, 168, 67, 0.2);
+                border-radius: 10px;
+              "
+            >
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: 700;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                "
+              >
+                Kantor Jepang
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                "
+              >
+                宮永 保文<br />茨城県守谷市みずき野2丁目9-9
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 fade-up">
+            <div
+              style="
+                background: white;
+                border-radius: 16px;
+                padding: 36px;
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+              "
+            >
+              <h3
+                style="font-size: 22px; color: var(--navy); margin-bottom: 6px"
+              >
+                Kirim Pesan
+              </h3>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 28px;
+                "
+              >
+                Isi formulir di bawah dan tim kami akan membalas dalam 1×24 jam
+                kerja.
+              </p>
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="kz-form-group">
+                      <label>Nama Lengkap *</label
+                      ><input type="text" placeholder="Nama Anda" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="kz-form-group">
+                      <label>Email *</label
+                      ><input type="email" placeholder="email@anda.com" />
+                    </div>
+                  </div>
+                </div>
+                <div class="kz-form-group">
+                  <label>Nomor WhatsApp</label
+                  ><input type="tel" placeholder="+62 ..." />
+                </div>
+                <div class="kz-form-group">
+                  <label>Program yang Diminati</label
+                  ><select>
+                    <option value="">Pilih Program</option>
+                    <option>Magang Jepang (TITP)</option>
+                    <option>Special Skill Worker (SSW)</option>
+                    <option>Kursus Bahasa Jepang</option>
+                    <option>Informasi Umum</option>
+                  </select>
+                </div>
+                <div class="kz-form-group">
+                  <label>Pesan *</label
+                  ><textarea
+                    placeholder="Tulis pertanyaan atau pesan Anda..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="kz-btn-primary"
+                  style="
+                    width: 100%;
+                    justify-content: center;
+                    padding: 14px;
+                    font-size: 15px;
+                  "
+                >
+                  <i class="fas fa-paper-plane"></i>Kirim Pesan
+                </button>
+              </form>
+              <div style="text-align: center; margin-top: 20px">
+                <p
+                  style="
+                    font-size: 13px;
+                    color: var(--text-muted);
+                    margin-bottom: 12px;
+                  "
+                >
+                  Atau langsung chat via WhatsApp:
+                </p>
+                <a
+                  href="https://wa.me/6282137197953?text=Halo%20saya%20ingin%20bertanya%20tentang%20LPK%20Kizuna"
+                  target="_blank"
+                  class="kz-btn-wa"
+                  style="justify-content: center; width: 100%"
+                  ><i class="fab fa-whatsapp"></i>Chat WhatsApp Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MAP -->
+        <div
+          class="mt-5 fade-up"
+          style="
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+          "
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.098690082242!2d110.3341261740548!3d-6.997658168533368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b99463f3e83%3A0xe02223acd49dd645!2sLPK.%20KIZUNA%20MITRA%20INDONESIA!5e0!3m2!1sid!2sid!4v1777884981169!5m2!1sid!2sid"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <footer class="kz-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="kz-footer-logo">
+              <img src="img/iconkizuna.webp" alt="Kizuna" />
+              <span>KIZUNA</span>
+            </div>
+            <p class="kz-footer-desc">
+              Lembaga Pelatihan Kerja resmi untuk program magang Jepang,
+              Persiapan SSW dan Internship.LPK Kizuna Mitra Indonesia adalah
+              Mitra terpercaya menuju karier internasional sejak 2018.
+            </p>
+            <div class="kz-footer-social">
+              <a
+                href="https://www.instagram.com/lpk_kizuna_mitra_indonesia/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.youtube.com/" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://wa.me/6282137197953" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+            <div class="kz-footer-legal-box mt-3">
+              <span
+                ><i
+                  class="fas fa-id-card"
+                  style="color: var(--gold); margin-right: 6px"
+                ></i
+                >Izin Kemnaker: KEP.10/LATTAS/VI/2018</span
+              >
+              <span
+                ><i
+                  class="fas fa-medal"
+                  style="color: var(--gold); margin-right: 6px"
+                ></i
+                >Akreditasi LA LPK: No. 013/LA-LPK/Akr/XI/2020</span
+              >
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-5">
+            <p class="kz-footer-heading">Program</p>
+            <div class="kz-footer-links">
+              <a href="magang">Magang Jepang</a>
+              <a href="ssw">SSW Jepang</a>
+              <a href="belajar">Kursus Bahasa</a>
+              <a href="kunjungan">Kunjungan</a>
+              <a href="kerjamagang">Kerja &amp; Magang</a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-5">
+            <p class="kz-footer-heading">Halaman</p>
+            <div class="kz-footer-links">
+              <a href="index">Beranda</a>
+              <a href="about">Tentang Kami</a>
+              <a href="team">Tim Kami</a>
+              <a href="blog">Galeri</a>
+              <a href="contact">Kontak</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5">
+            <p class="kz-footer-heading">Hubungi Kami</p>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i
+              ><span
+                >Jl. Beringin Rejo Barat No.54, Bringin, Kec. Ngaliyan, Kota
+                Semarang, Jawa Tengah 50189</span
+              >
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-phone"></i><span>+62 821-3719-7953</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-envelope"></i
+              ><span>kizunamitraindonesia@gmail.com</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-clock"></i
+              ><span>Senin – Jumat, 08:00 – 17:00 WIB</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-globe-asia"></i
+              ><span
+                >Kantor Jepang: 宮永 保文<br />茨城県守谷市みずき野2丁目9-9</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="kz-footer-bottom">
+          <p>© 2025 LPK Kizuna Mitra Indonesia. All Rights Reserved.</p>
+          <p>
+            Izin Kemnaker No. KEP.10/LATTAS/VI/2018 | Akreditasi LA LPK No.
+            013/LA-LPK/Akr/XI/2020
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/6282137197953?text=Halo%20saya%20ingin%20bertanya%20tentang%20LPK%20Kizuna"
+      target="_blank"
+      class="kz-wa-float"
+      title="Chat WhatsApp"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+    <a href="#" class="kz-back-top" id="kzBackTop"
+      ><i class="fas fa-chevron-up"></i
+    ></a>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/kizuna-main.js"></script>
+  </body>
+</html>

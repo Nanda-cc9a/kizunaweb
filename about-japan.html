@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>私たちについて | LPK KIZUNA Mitra Indonesia</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="LPK KIZUNA Mitra Indonesia — 日本での技能実習、特定技能、日本語コースを提供するスマランの信頼できる送り出し機関です。"
+    />
+    <link rel="icon" href="img/iconkizuna.webp" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/kizuna-theme.css" rel="stylesheet" />
+
+    <style>
+      .about-img {
+        border-radius: 14px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .vm-tab {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .vm-btn {
+        padding: 10px 22px;
+        border-radius: 7px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+      }
+
+      .vm-btn.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      .vm-btn:not(.active) {
+        background: var(--light);
+        color: var(--text-muted);
+      }
+
+      .vm-panel {
+        display: none;
+      }
+
+      .vm-panel.active {
+        display: block;
+      }
+
+      .timeline {
+        padding-left: 32px;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(212, 168, 67, 0.3);
+      }
+
+      .tl-item {
+        position: relative;
+        margin-bottom: 28px;
+      }
+
+      .tl-dot {
+        position: absolute;
+        left: -28px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 3px solid var(--white);
+        box-shadow: 0 0 0 3px var(--gold);
+      }
+
+      .tl-year {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .tl-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--navy);
+        margin: 3px 0;
+      }
+
+      .tl-desc {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      .stat-box {
+        background: var(--navy);
+        border-radius: 12px;
+        padding: 26px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--gold);
+        line-height: 1;
+      }
+
+      .stat-box .lbl {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="kz-topbar d-none d-lg-block">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>
+            <span class="kz-tb-item"
+              ><i class="fas fa-clock"></i>月曜日〜金曜日、08:00〜17:00 (WIB)</span
+            >
+            <span class="kz-tb-item"
+              ><i class="fas fa-phone"></i>+62 821-3719-7953</span
+            >
+            <span class="kz-tb-item"
+              ><i class="fas fa-envelope"></i
+              >kizunamitraindonesia@gmail.com</span
+            >
+          </div>
+          <div>
+            <span class="kz-legal-pill"
+              ><i class="fas fa-shield-alt"></i>労働省公認 LPK</span
+            >
+            <span class="kz-legal-pill"
+              ><i class="fas fa-check-circle"></i>LA LPK 2020 認定</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="kz-navbar">
+      <div class="kz-navbar-inner container-fluid px-4">
+        <a href="index" class="kz-brand">
+          <img src="img/iconkizuna.webp" alt="Kizuna" />
+          <span class="kz-brand-name">KIZUNA<em> Mitra Indonesia</em></span>
+        </a>
+        <button class="kz-toggler" id="kzToggler">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="kzNavMenu">
+          <ul class="kz-nav">
+            <li><a href="index-ja">ホーム</a></li>
+            <li><a href="about-japan" class="active">私たちについて</a></li>
+            <li><a href="team-japan">私たちのチーム</a></li>
+            <li><a href="galery-japan">ギャラリー</a></li>
+            <li>
+              <a href="#">プログラム ▾</a>
+              <ul class="kz-dropdown-menu">
+                <li><a href="magang-japan">技能実習</a></li>
+                <li><a href="ssw-japan">特定技能 (SSW)</a></li>
+                <li><a href="belajar-japan">日本語コース</a></li>
+                <li>
+                  <a href="kunjungan-japan">訪問と面接</a>
+                </li>
+                <li><a href="kerjamagang-japan">就職・インターンシップ</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="kz-lang-label"
+                ><i class="fas fa-globe"></i> JPN ▾</a
+              >
+              <ul class="kz-dropdown-menu" style="min-width: 140px">
+                <li>
+                  <a href="about" class="kz-lang-selector">🇮🇩 Indonesia</a>
+                </li>
+                <li>
+                  <a href="about-japan" class="kz-lang-selector active"
+                    >🇯🇵 日本語</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="contact-japan" class="kz-nav-cta">今すぐ登録</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="kz-page-hero">
+      <div class="container">
+        <div class="eyebrow">LPK Kizuna Mitra Indonesia</div>
+        <h1>私たちについて</h1>
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+          "
+        >
+          2018年以来、何百人もの卒業生を日本へ送り出してきた公認機関、LPK Kizuna Mitra Indonesiaについて詳しくご紹介します。
+        </p>
+        <div class="kz-breadcrumb">
+          <a href="index-ja">ホーム</a><span class="sep">›</span
+          ><span>私たちについて</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUR STORY -->
+    <section style="padding: 72px 0">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 fade-up">
+            <div
+              style="
+                position: relative;
+                padding-bottom: 24px;
+                padding-right: 20px;
+              "
+            >
+              <img src="img/wlkmkizuna.jpg" alt="Kizuna" class="about-img" />
+              <div
+                style="
+                  position: absolute;
+                  bottom: -10px;
+                  right: 10px;
+                  background: var(--primary);
+                  color: white;
+                  border-radius: 10px;
+                  padding: 18px 22px;
+                  text-align: center;
+                  box-shadow: 0 6px 22px rgba(200, 16, 46, 0.3);
+                "
+              >
+                <div style="font-size: 36px; font-weight: 800; line-height: 1">
+                  7+
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 600;
+                    opacity: 0.9;
+                    margin-top: 4px;
+                  "
+                >
+                  年以上の<br />実績
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">私たちの歩み</div>
+              <h2>2018年よりスマランで活動する、<br />信頼の公認職業訓練校</h2>
+              <p>
+                LPK Kizuna Mitra Indonesiaは、2018年よりインドネシアのスマランで活動している、日本への派遣・教育を専門とする公認の職業訓練校（LPK）です。日本語教育、就業態度の育成、専門スキルの習得に重点を置き、参加者が安全かつ合法的に、そして明確な目標を持って日本の技能実習や就労プログラムに進めるようサポートしています。集中トレーニングシステムとプロフェッショナルな伴走支援により、国際的なキャリア、グローバルな実務経験、そして日本でのより良い未来を目指す多くの候補者に選ばれています。
+              </p>
+            </div>
+            <div class="kz-legal-card">
+              <i class="fas fa-id-card"></i>
+              <div>
+                <div class="title">インドネシア労働省 運営許可</div>
+                <div class="num">
+                  No. <strong>KEP.10/LATTAS/VI/2018</strong> — Ditjen Binapenta
+                  &amp; PKK
+                </div>
+              </div>
+            </div>
+            <div class="kz-legal-card">
+              <i class="fas fa-medal"></i>
+              <div>
+                <div class="title">
+                  LA LPK 認定 — 中部ジャワ州労働局
+                </div>
+                <div class="num">
+                  No. <strong>013/LA-LPK/Akr/XI/2020</strong> — 2020年より認定
+                </div>
+              </div>
+            </div>
+            <div class="kz-legal-card">
+              <i class="fas fa-globe-asia"></i>
+              <div>
+                <div class="title">
+                  公認送り出し機関 (SO) No.2/1812/HK.03.01/VII/2024
+                </div>
+                <div class="num">
+                  <strong>JITCO</strong>に登録され、<strong>多数の日本企業</strong>と提携 — 日本への正式な技能実習生派遣を行っています。
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 d-flex flex-wrap" style="gap: 12px">
+              <a href="contact-japan" class="kz-btn-primary"
+                ><i class="fas fa-paper-plane"></i>今すぐ登録</a
+              >
+              <a
+                href="https://wa.me/6282137197953"
+                target="_blank"
+                class="kz-btn-wa"
+                ><i class="fab fa-whatsapp"></i>WhatsAppで問い合わせる</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG KIZUNA - PARAGRAF & FOTO -->
+    <section style="padding: 80px 0; background: #fff">
+      <div class="container">
+        <!-- Baris 1: Teks kiri, foto kanan -->
+        <div class="row align-items-center g-5 mb-5 fade-up">
+          <div class="col-lg-6">
+            <div class="eyebrow">LPK Kizunaについて</div>
+            <h2
+              style="
+                font-size: clamp(22px, 3.5vw, 34px);
+                color: var(--navy);
+                margin-bottom: 20px;
+              "
+            >
+              LPK Kizuna — 2018年より日本へのキャリアを繋ぐ架け橋
+            </h2>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+                margin-bottom: 18px;
+              "
+            >
+              <strong style="color: var(--navy)"
+                >LPK Kizuna Mitra Indonesia</strong
+              >
+              は、2018年4月に中部ジャワ州スマランで設立された公認の職業訓練校です。日本での技能実習経験を持つ卒業生たちが、インドネシアの若者たちに実質的なチャンスを提供したいという想いから設立されました。Kizunaは、日本での就職成功に向け、ゼロから皆様のキャリアをサポートする信頼できるパートナーです。
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+                margin-bottom: 24px;
+              "
+            >
+              インドネシア労働省の認可を受け、中部ジャワ州労働局（LA LPK）の認定も取得しており、これまでに300名以上の卒業生を日本各地へ送り出してきました。体系的なトレーニング方法、経験豊富な講師陣、そして20社以上の日本企業とのネットワークにより、Kizunaは皆様を次のステージへと導きます。
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <div
+                style="
+                  background: var(--light);
+                  border-radius: 10px;
+                  padding: 14px 20px;
+                  text-align: center;
+                  min-width: 110px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--primary);
+                  "
+                >
+                  300+
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                  "
+                >
+                  卒業生
+                </div>
+              </div>
+              <div
+                style="
+                  background: var(--light);
+                  border-radius: 10px;
+                  padding: 14px 20px;
+                  text-align: center;
+                  min-width: 110px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--primary);
+                  "
+                >
+                  7+
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                  "
+                >
+                  年間の実績
+                </div>
+              </div>
+              <div
+                style="
+                  background: var(--light);
+                  border-radius: 10px;
+                  padding: 14px 20px;
+                  text-align: center;
+                  min-width: 110px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 22px;
+                    font-weight: 800;
+                    color: var(--primary);
+                  "
+                >
+                  4.9★
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-muted);
+                    font-weight: 600;
+                  "
+                >
+                  Google の評価
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              style="
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.14);
+              "
+            >
+              <img
+                src="img/galerykiz.jpg"
+                alt="LPK Kizunaの様子"
+                style="
+                  width: 100%;
+                  height: 400px;
+                  object-fit: cover;
+                  display: block;
+                "
+              />
+              <div
+                style="
+                  position: absolute;
+                  bottom: 20px;
+                  left: 20px;
+                  background: rgba(255, 255, 255, 0.95);
+                  border-radius: 12px;
+                  padding: 12px 18px;
+                  backdrop-filter: blur(8px);
+                "
+              >
+                <div
+                  style="font-size: 13px; font-weight: 700; color: var(--navy)"
+                >
+                  📍 スマラン、ンガリヤン
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted)">
+                  オフィス & トレーニングセンター
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baris 2: Foto kiri, teks kanan -->
+        <div
+          class="row align-items-center g-5 fade-up"
+          style="flex-direction: row-reverse"
+        >
+          <div class="col-lg-6">
+            <div class="eyebrow">学習環境</div>
+            <h2
+              style="
+                font-size: clamp(20px, 3vw, 30px);
+                color: var(--navy);
+                margin-bottom: 20px;
+              "
+            >
+              共に学び、共に成長する
+            </h2>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+                margin-bottom: 18px;
+              "
+            >
+              Kizunaでの学習は、単にひらがなやカタカナを覚えるだけではありません。参加者同士が互いに支え合い、温かく活気に満ちた環境作りを大切にしています。また、ボランティアや日本からの学生が訪れ、直接経験を共有する機会も少なくありません。
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--text-muted);
+                line-height: 1.85;
+              "
+            >
+              私たちの学習メソッドには、日常会話の練習、面接シミュレーション、体力トレーニング、そして日本のリアルな企業文化の理解が含まれています。これにより、日本に到着した際に精神面でもプロフェッショナルとしても準備が整った状態を目指します。
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px"
+            >
+              <div
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                  grid-row: span 2;
+                "
+              >
+                <img
+                  src="img/kedekatan.jpg"
+                  alt="受講生たちの交流"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    min-height: 280px;
+                  "
+                />
+              </div>
+              <div
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="img/belajarbersama.webp"
+                  alt="Kizunaでの学習風景"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    display: block;
+                  "
+                />
+              </div>
+              <div
+                style="
+                  border-radius: 16px;
+                  overflow: hidden;
+                  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <img
+                  src="img/mensetsu.jpg"
+                  alt="面接練習の様子"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    display: block;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section style="padding: 64px 0; background: #fff">
+      <div class="container">
+        <div
+          class="section-header text-center fade-up"
+          style="margin: 0 auto 48px; max-width: 600px"
+        >
+          <div class="eyebrow" style="justify-content: center">
+            選ばれる理由
+          </div>
+          <h2 style="font-size: clamp(24px, 4vw, 36px)">
+            LPK KIZUNAの強み
+          </h2>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 15px;
+              line-height: 1.7;
+              margin: 0 auto;
+            "
+          >
+            私たちは単なる教育機関ではなく、皆様の日本でのキャリアを最初から成功までサポートするパートナーです。
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-certificate"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                公式な法的認可
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                インドネシア労働省の認可および中部ジャワ州労働局の認定。JITCOに登録され、日本企業と直接提携しています。
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-chalkboard-teacher"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                経験豊富な講師陣
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                講師陣は日本での技能実習経験者。理論だけでなく、現場で本当に必要な知識を理解しています。
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-hand-holding-usd"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                透明性と適正価格
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                すべての費用を事前に明確にご説明します。隠れた費用はありません。透明性の高いプロセスをお約束します。
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 fade-up">
+            <div
+              style="
+                background: var(--light);
+                border-radius: 16px;
+                padding: 32px 24px;
+                text-align: center;
+                height: 100%;
+                transition:
+                  box-shadow 0.3s,
+                  transform 0.3s;
+              "
+              onmouseover="
+                this.style.boxShadow = '0 8px 32px rgba(200,16,46,0.12)';
+                this.style.transform = 'translateY(-4px)';
+              "
+              onmouseout="
+                this.style.boxShadow = 'none';
+                this.style.transform = 'none';
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--primary);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 18px;
+                "
+              >
+                <i
+                  class="fas fa-users"
+                  style="color: #fff; font-size: 24px"
+                ></i>
+              </div>
+              <div
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 10px;
+                "
+              >
+                万全のサポート体制
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                  margin: 0;
+                "
+              >
+                登録、トレーニング、面接、ビザ申請、そして出国まで、すべてのステップに同行しサポートします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISI MISI -->
+    <section style="padding: 72px 0; background: var(--light)">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">私たちの目的</div>
+              <h2>KIZUNAのビジョンとミッション</h2>
+            </div>
+            <div class="vm-tab">
+              <button class="vm-btn active" onclick="switchVm(this, 'visi')">
+                ビジョン
+              </button>
+              <button class="vm-btn" onclick="switchVm(this, 'misi')">
+                ミッション
+              </button>
+            </div>
+            <div class="vm-panel active" id="vm-visi">
+              <p
+                style="
+                  font-size: 15px;
+                  line-height: 1.8;
+                  color: var(--text-muted);
+                "
+              >
+                優れた、プロフェッショナルで信頼される職業訓練校として、国際レベル、特に日本への技能実習分野で競争できる人材を育成することを目指します。
+              </p>
+            </div>
+            <div class="vm-panel" id="vm-misi">
+              <ul style="padding-left: 0; list-style: none">
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >革新的で高品質な日本語、日本文化、就業態度のトレーニングを提供する。
+                </li>
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >受講生やパートナーとの強い信頼関係を築き、プロフェッショナルなサービスを提供する。
+                </li>
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >日本での実習機会に関する信頼できる情報と相談の中心となる。
+                </li>
+                <li
+                  style="
+                    padding: 8px 0;
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    display: flex;
+                    gap: 10px;
+                    align-items: flex-start;
+                  "
+                >
+                  <i
+                    class="fas fa-check-circle"
+                    style="
+                      color: var(--primary);
+                      margin-top: 3px;
+                      flex-shrink: 0;
+                    "
+                  ></i
+                  >日本企業との戦略的な提携を行い、受講生の機会を拡大する。
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-7 fade-up">
+            <div class="kz-sh">
+              <div class="eyebrow">登録の流れ</div>
+              <h2>KIZUNAへの申し込み方法</h2>
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">申し込みと一次選考</div>
+                <div class="tl-desc">
+                  LPK Kizunaにて申し込みを行い、健康診断（MCU）と登録面接を受けます。
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">言語・文化トレーニング</div>
+                <div class="tl-desc">
+                  日本語、文化、就業態度を習得するためのトレーニングを受けます。各試験に向けた特別指導や、日本での生活・仕事に関する最終講習も行います。
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">
+                  マッチングと企業面接
+                </div>
+                <div class="tl-desc">
+                  体系的な選考プロセスを通じて、日本企業に紹介されます。直接またはオンラインでの面接が行われます。
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">ビザ・書類手続き</div>
+                <div class="tl-desc">
+                  選考合格後、KIZUNAチームが必要な書類の準備とビザ申請プロセスをサポートします。
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year"></div>
+                <div class="tl-title">
+                  出国前集中講習
+                </div>
+                <div class="tl-desc">
+                  就業文化や上級日本語に関する最終オリエンテーションを行い、日本への出国をサポートします。
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2018年–現在</div>
+                <div class="tl-title">300名以上の卒業生と成長</div>
+                <div class="tl-desc">
+                  300名以上の卒業生が日本で活躍中。UDINUS、UNNES、20社以上の日本企業と提携しています。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section style="padding: 60px 0; background: var(--navy)">
+      <div class="container">
+        <div class="row kz-stats-row" style="--bs-gutter-x: 20px">
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="300+">300+</div>
+              <div class="lbl">派遣済みの卒業生</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="95%">95%</div>
+              <div class="lbl">試験合格率</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="20+">20+</div>
+              <div class="lbl">日本提携企業</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 mb-4 fade-up">
+            <div class="stat-box">
+              <div class="num" data-count="7+">7+</div>
+              <div class="lbl">年間の実績</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="kz-cta-bar">
+      <div class="container" style="position: relative; z-index: 2">
+        <h2>日本への第一歩を踏み出しませんか？</h2>
+        <p>
+          無料相談を受け付けています。あなたに最適なプログラムを一緒に見つけましょう。
+        </p>
+        <a
+          href="https://wa.me/6282137197953?text=こんにちは、LPK Kizunaのプログラムについて相談したいです。"
+          target="_blank"
+          class="kz-btn-white"
+          ><i class="fab fa-whatsapp"></i>無料相談</a
+        >
+        <a href="contact-japan" class="kz-btn-white-outline"
+          ><i class="fas fa-envelope"></i>メッセージを送る</a
+        >
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            margin: 20px 0 0;
+          "
+        >
+          <i class="fas fa-shield-alt" style="margin-right: 5px"></i>労働省公認 LPK · 透明性 · 隠れた費用なし
+        </p>
+      </div>
+    </div>
+    <footer class="kz-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="kz-footer-logo">
+              <img src="img/iconkizuna.webp" alt="Kizuna" />
+              <span>KIZUNA</span>
+            </div>
+            <p class="kz-footer-desc">
+              技能実習、特定技能、インターンシップのための公認職業訓練校。LPK Kizuna Mitra Indonesiaは、2018年以来、国際的なキャリアへの信頼できるパートナーです。
+            </p>
+            <div class="kz-footer-social">
+              <a
+                href="https://www.instagram.com/lpk_kizuna_mitra_indonesia/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.youtube.com/" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://wa.me/6282137197953" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+            <div class="kz-footer-legal-box mt-3">
+              <span
+                ><i
+                  class="fas fa-id-card"
+                  style="color: var(--gold); margin-right: 6px"
+                ></i
+                >労働省許可: KEP.10/LATTAS/VI/2018</span
+              >
+              <span
+                ><i
+                  class="fas fa-medal"
+                  style="color: var(--gold); margin-right: 6px"
+                ></i
+                >LA LPK 認定: No. 013/LA-LPK/Akr/XI/2020</span
+              >
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-5">
+            <p class="kz-footer-heading">プログラム</p>
+            <div class="kz-footer-links">
+              <a href="magang-japan">技能実習</a>
+              <a href="ssw-japan">特定技能 (SSW)</a>
+              <a href="belajar-japan">日本語コース</a>
+              <a href="kunjungan-japan">訪問と面接</a>
+              <a href="kerjamagang-japan">就職・インターンシップ</a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-5">
+            <p class="kz-footer-heading">ページ</p>
+            <div class="kz-footer-links">
+              <a href="index-ja">ホーム</a>
+              <a href="about-japan">私たちについて</a>
+              <a href="team-japan">私たちのチーム</a>
+              <a href="galery-japan">ギャラリー</a>
+              <a href="contact-japan">お問い合わせ</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5">
+            <p class="kz-footer-heading">お問い合わせ</p>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i
+              ><span
+                >Jl. Beringin Rejo Barat No.54, Bringin, Kec. Ngaliyan, Kota
+                Semarang, Jawa Tengah 50189</span
+              >
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-phone"></i><span>+62 821-3719-7953</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-envelope"></i
+              ><span>kizunamitraindonesia@gmail.com</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-clock"></i
+              ><span>月曜日〜金曜日、08:00〜17:00 (WIB)</span>
+            </div>
+            <div class="kz-footer-contact-item">
+              <i class="fas fa-globe-asia"></i
+              ><span
+                >日本事務所: 宮永 保文<br />茨城県守谷市みずき野2丁目9-9</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="kz-footer-bottom">
+          <p>© 2025 LPK Kizuna Mitra Indonesia. 無断複写・転載を禁じます。</p>
+          <p>
+            労働省許可 No. KEP.10/LATTAS/VI/2018 | LA LPK 認定 No.
+            013/LA-LPK/Akr/XI/2020
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/6282137197953?text=こんにちは、LPK Kizunaのプログラムについて質問があります。"
+      target="_blank"
+      class="kz-wa-float"
+      title="WhatsAppでチャット"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+    <a href="#" class="kz-back-top" id="kzBackTop"
+      ><i class="fas fa-chevron-up"></i
+    ></a>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/kizuna-main.js"></script>
+
+    <script>
+      function switchVm(btn, id) {
+        document
+          .querySelectorAll(".vm-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll(".vm-panel")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("vm-" + id).classList.add("active");
+      }
+    </script>
+  </body>
+</html>

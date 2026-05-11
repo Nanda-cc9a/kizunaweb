@@ -1,0 +1,23 @@
+# ------------------------------------------------------------------------------
+# KIZUNA MITRA INDONESIA - Clean URL Configuration
+# ------------------------------------------------------------------------------
+
+RewriteEngine On
+
+# 1. Force HTTPS (Keamanan)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Hilangkan .html dari URL secara internal
+# User ketik kizuna.id/about -> Server baca about.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# 3. Redirect permanen jika user mengetik .html di URL (Bagus untuk SEO)
+# kizuna.id/about.html -> kizuna.id/about
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ %1 [L,R=301]
+
+# 4. Custom Error 404 (Opsional - Pastikan file 404.html ada)
+# ErrorDocument 404 /404.html
