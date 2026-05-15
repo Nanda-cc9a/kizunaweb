@@ -19,7 +19,7 @@ $whatsapp = strip_tags(htmlspecialchars($_POST['whatsapp']));
 $m_subject = strip_tags(htmlspecialchars($_POST['subject']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
-$to = "nandaahmad624@gmail.com"; 
+$to = "kizunamitraindonesia@gmail.com"; 
 $email_subject = "Kontak Web Kizuna: $m_subject - $name";
 $body = "Anda menerima pesan baru dari formulir kontak website KIZUNA.\n\n".
         "----- DETAIL PENGIRIM -----\n".

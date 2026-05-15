@@ -20,14 +20,21 @@ $(function () {
       var isJa = lang === "ja";
 
       // Format pesan untuk dikirim via Email (Mailto)
-      var emailTo = "nandaahmad624@gmail.com";
-      var subjectText = isJa ? "ウェブサイトからのメッセージ: " + name : "Pesan dari Website: " + name;
-      
-      var bodyText = isJa ? "こんにちは KIZUNA 管理者様、\n\n" : "Halo admin KIZUNA,\n\n";
+      var emailTo = "kizunamitraindonesia@gmail.com";
+      var subjectText = isJa
+        ? "ウェブサイトからのメッセージ: " + name
+        : "Pesan dari Website: " + name;
+
+      var bodyText = isJa
+        ? "こんにちは KIZUNA 管理者様、\n\n"
+        : "Halo admin KIZUNA,\n\n";
       bodyText += (isJa ? "お名前: " : "Nama: ") + name + "\n";
       bodyText += "Email: " + email + "\n";
       bodyText += "WhatsApp: " + whatsapp + "\n";
-      bodyText += (isJa ? "ご希望のプログラム: " : "Program: ") + (program ? program : (isJa ? "未選択" : "Tidak dipilih")) + "\n\n";
+      bodyText +=
+        (isJa ? "ご希望のプログラム: " : "Program: ") +
+        (program ? program : isJa ? "未選択" : "Tidak dipilih") +
+        "\n\n";
       bodyText += (isJa ? "メッセージ:\n" : "Pesan:\n") + message + "\n";
 
       var mailtoUrl =
@@ -39,8 +46,10 @@ $(function () {
         encodeURIComponent(bodyText);
 
       // Memunculkan pesan sukses di website
-      var successMsg = isJa ? "メールアプリを起動しています..." : "Membuka Aplikasi Email Anda...";
-      
+      var successMsg = isJa
+        ? "メールアプリを起動しています..."
+        : "Membuka Aplikasi Email Anda...";
+
       $("#success").html("<div class='alert alert-success'>");
       $("#success > .alert-success")
         .html(
